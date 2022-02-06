@@ -14,6 +14,10 @@ export class QuoteComponent implements OnInit {
 
   ]
 
+  details(index:number){
+    this.quotes[index].showDetails = !this.quotes[index].showDetails
+    
+  }
   deleteQuote(isComplete:boolean,index:number){
     if(isComplete){
       this.quotes.splice(index,1);
