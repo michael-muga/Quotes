@@ -1,0 +1,10 @@
+h1{
+    margin-bottom: 3em;
+    text-align: center;
+}
+.myQuotes{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3em;
+    margin-left: -12em;
+}
