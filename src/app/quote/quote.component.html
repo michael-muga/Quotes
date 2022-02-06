@@ -1,7 +1,16 @@
 <div class="container">
     <h1>Get Motivated With Quotes</h1>
-    <div *ngFor='let quote of quotes'>
-        {{quote.name}}
-        <app-quote-detail [quote]='quote'></app-quote-detail>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngFor='let quote of quotes; let i = index'>
+                {{quote.quote}}
+                <app-quote-detail [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <app-create-quote (addingQuote)='addNewQuote($event)'></app-create-quote>
+        </div>
     </div>
+
 </div>

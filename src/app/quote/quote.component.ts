@@ -9,8 +9,21 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[]=[
-    {id:1, name:"Never be scared to dream and always dream big", author:"Ahmed Abaughaush", submitter:"michael muga"}
+    new Quote(1,"Never be scared to dream and always dream big","Ahmed Abaughaush","michael muga"),
+    new Quote(2,"Never be scared to dream and always dream big", "Ahmed Abaughaush", "michael shawn")
+
   ]
+
+  deleteQuote(isComplete:boolean,index:number){
+    if(isComplete){
+      this.quotes.splice(index,1);
+    }
+  }
+  addNewQuote(quote: any){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    this.quotes.push(quote)
+  }
   constructor() { }
 
   ngOnInit(): void {
